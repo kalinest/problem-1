@@ -18,3 +18,21 @@ programming language you want.
 TIP: before submitting, first test the correctness of your program on
 some small test files or your own devising. Then post your best test
 cases to the discussion forums to help your fellow students!
+
+* Solução
+
+A função =sort-and-count= retorna mais de um valor, o primeiro a lista
+ordenada e o segundo o número de inversões. No código abaixo o arquivo
+entrada é lido, para evitar warning do compilador, ignoro o valor a,
+que não é usado, e o valor b é retornado.
+
+#+BEGIN_SRC lisp
+  (multiple-value-bind (a b)
+      (sort-and-count (read-data "IntegerArray.txt"))
+    (declare (ignore a))
+    b)
+#+END_SRC
+
+A resposta são *2407905288* inversões no arquivo entrada. Observem
+como =merge-and-count= é uma função otimizada para [[http://c2.com/cgi/wiki?TailRecursion][recursão de cauda]].
+
